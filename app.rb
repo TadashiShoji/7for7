@@ -66,8 +66,6 @@ error(Koala::Facebook::APIError) do
 end
 
 post "/" do
-  @settings = settings
-  # check if the user liked the page
   @signed_request = authenticator.parse_signed_request(params[:signed_request])
   liked_page = @signed_request['page']['liked']
   if liked_page 
