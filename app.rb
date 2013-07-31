@@ -65,6 +65,17 @@ error(Koala::Facebook::APIError) do
   redirect "/auth/facebook"
 end
 
+post "/" do
+  # check if the user liked the page
+  @signed_request = authenticator.parse_signed_request(params[:signed_request])
+  liked_page = @signed_request['page']['liked']
+  if liked_page 
+    redirect "/"
+  else
+    erb :locked
+  end
+end
+
 get "/" do
   # Get base API Connection
   @graph  = Koala::Facebook::API.new(access_token)
