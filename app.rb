@@ -1,5 +1,8 @@
 require "sinatra"
-require 'koala'
+require "koala"
+require "pg"
+
+require "data_mapper"
 
 enable :sessions
 set :raise_errors, false
