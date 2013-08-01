@@ -8,6 +8,75 @@ enable :sessions
 set :raise_errors, false
 set :show_exceptions, false
 
+# database connection from heroku
+DataMapper.setup(:default, ENV["DATABASE_URL"])
+
+class Group
+  
+  include DataMapper::Resource
+  
+  property  :id,            Serial
+  property  :name,          String, :required => true
+  property  :is_active,     Boolean, :required => true
+  property  :promo_code,    String, :required => true
+  property  :created_at,    DateTime,  :required => false
+  property  :updated_at,    DateTime,  :required => false
+
+  has n, :products, :constraint => :destroy
+  has n, :promotions, :constraint => :destroy
+    
+end
+
+class Product
+
+  include DataMapper::Resource
+
+  property  :id,            Serial
+  property  :productname,   String, :required => true
+  property  :description,   String, :required => true
+  property  :picture,       String, :required => true
+  property  :created_at,    DateTime,  :required => false
+  property  :updated_at,    DateTime,  :required => false
+
+  belongs_to :group
+  has n, :votes, :constraint => :destroy
+
+end
+
+class Promotion
+
+  include DataMapper::Resource
+
+  property  :id,            Serial
+  property  :productname,   String, :required => true
+  property  :description,   String, :required => true
+  property  :picture,       String, :required => true
+  property  :created_at,    DateTime,  :required => false
+  property  :updated_at,    DateTime,  :required => false
+
+  belongs_to :group
+
+end
+
+class Vote
+
+  include DataMapper::Resource
+
+  property  :id,            Serial
+  property  :email,         String, :required => false
+  property  :ip_address,    String
+  property  :subscribed,    Boolean
+  property  :username,      String
+  property  :created_at,    DateTime 
+
+  belongs_to :product
+
+end
+
+
+# Create or upgrade the database all at once
+DataMapper.auto_upgrade!
+
 # Scope defines what permissions that we are asking the user to grant.
 # In this example, we are asking for the ability to publish stories
 # about using the app, access to what the user likes, and to be able
