@@ -20,7 +20,7 @@
 
 	<form action="/vote/<%= group.id %>" method="post" id="vote<%= i + 1 %>" enctype="multipart/form-data">
 			<p>
-		<input type="text" id="email" name="votes[email]" value="" hidden />
+		<input type="text" id="email" name="votes[email]" value="<%= session[:user_name] %>" hidden />
 		<input type="text" id="ip_address" name="votes[ip_address]" value="<%= request.ip %>" hidden />
 		<input type="text" id="subscribed" name="votes[subscribed]" value="true" hidden />
 		<input type="text" id="username" name="votes[username]" value="username" hidden />
