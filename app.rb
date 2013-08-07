@@ -150,10 +150,6 @@ error(Koala::Facebook::APIError) do
   redirect "/auth/facebook"
 end
 
-get '/' do
-  page = params[:p] || 'index'
-  erb :"#{page}"
-end
 
 post "/" do
   @signed_request = authenticator.parse_signed_request(params[:signed_request])
