@@ -142,7 +142,9 @@ helpers do
     session[:access_token] || access_token_from_cookie
   end
 
+  def
   include Sinatra::Authorization
+  end
 
 end
 
