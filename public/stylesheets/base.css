@@ -8,6 +8,7 @@
 html{
   width: 800px;
   height: 1000px;
+  overflow-x:hidden;
 }
 .clearfix:after {
   clear: both;
