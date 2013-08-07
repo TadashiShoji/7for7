@@ -368,7 +368,7 @@ body {
 .modalDialog {
   position: fixed;
   font-family: Arial, Helvetica, sans-serif;
-  top: 300;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -394,6 +394,7 @@ body {
   z-index: 100;
   border-radius: 10px;
   background: #fff;
+  top: 200px;
   background: -moz-linear-gradient(#fff, #999);
   background: -webkit-linear-gradient(#fff, #999);
   background: -o-linear-gradient(#fff, #999);
