@@ -4,6 +4,10 @@
 
 /* =clearfix
 --------------------------------------------- */
+
+html{
+  width: 800px;
+}
 .clearfix:after {
   clear: both;
   content: ".";
