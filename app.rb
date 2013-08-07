@@ -3,6 +3,7 @@ require "koala"
 require "pg"
 
 require "data_mapper"
+require "./lib/authorization"
 
 enable :sessions
 set :raise_errors, false
@@ -112,7 +113,7 @@ end
 
 helpers do
   include Sinatra::Authorization
-  
+
   def host
     request.env['HTTP_HOST']
   end
