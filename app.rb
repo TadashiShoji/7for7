@@ -161,7 +161,8 @@ post "/" do
   if liked_page 
     redirect "/"
   else
-    erb :locked
+    redirect "/"
+   # erb :locked
   end
 end
 
