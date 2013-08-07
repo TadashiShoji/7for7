@@ -269,7 +269,7 @@
 <form action="/email/create" method="post" id="email" enctype="multipart/form-data">
 	<p>
 		<input type="email" name="email[email]" placeholder="Enter Email Address.." required />	
-		<input type="text" name="email[username]" value="myusername" hidden/>	
+		<input type="text" name="email[username]" value="<%= session[:user_name] %>" hidden/>	
 	</p>
 	<p>
 		<a style="text-decoration: none;" href="#openModal"><label style="color:#0d7888;">I agree to terms and conditions:</label></a>
