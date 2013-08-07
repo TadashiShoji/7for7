@@ -186,8 +186,9 @@ get "/" do
   end
   if @groups = Group.first(:is_active => true)
   erb :index
-else
+  else
   erb :novote
+  end
 end
 
 # used by Canvas apps - redirect the POST to be a regular GET
