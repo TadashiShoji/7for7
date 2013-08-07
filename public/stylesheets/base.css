@@ -7,6 +7,7 @@
 
 html{
   width: 800px;
+  height: 1000px;
 }
 .clearfix:after {
   clear: both;
@@ -23,9 +24,7 @@ html{
 }
 
 body {
-  width: 800px;
-  height: 850px;
-  margin: 0 auto;
+
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -86,7 +85,7 @@ body {
 .close:hover { background: #00d9ff; }
 
 .container{
- 
+  position: relative;
 }
 
 #image
