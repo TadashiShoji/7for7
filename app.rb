@@ -111,6 +111,8 @@ before do
 end
 
 helpers do
+  include Sinatra::Authorization
+  
   def host
     request.env['HTTP_HOST']
   end
@@ -142,7 +144,6 @@ helpers do
     session[:access_token] || access_token_from_cookie
   end
 
-  include Sinatra::Authorization
 
 end
 
