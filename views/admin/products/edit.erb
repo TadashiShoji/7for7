@@ -1,0 +1,23 @@
+<div class="container">
+<h3>Edit</h3>
+
+<form	action="/admin/day/products/update" method="post" id="product" enctype="multipart/form-data">
+	<p>
+		<label>Product:</label><br />
+		<input type="text" name="product[productname]" id="blog" value="<%= @product.productname %>"/>
+	</p>
+	<p>
+		<label>Description?:</label><br />
+		<input type="text" name="product[description]" id="blogger" value="<%= @product.description %>"/>
+	</p>
+	<p>
+		<label>Promo Code:</label><br />
+		<input type="text" name="product[picture]" id="title" value="<%= @product.picture %>"/>
+	</p>
+	<input type="hidden" name="id" value="<%= @product.id %>">
+	<input type="hidden" name="dayid" value="<%= @day.id %>">
+	<p>
+		<input type="submit">
+	</p>
+</form>
+</div>

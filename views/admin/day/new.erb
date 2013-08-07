@@ -1,0 +1,26 @@
+<div class="container">
+
+<h3>Create A New Day</h3>
+
+<form action="/admin/day/create" method="post" id="day" enctype="multipart/form-data">
+	<p>
+		<label>Day:</label><br />
+		<input type="text" name="day[name]" id="name" />	
+	</p>
+	<p>
+		<label>Activated:</label><br />
+			<select name="day[is_active]" id="is_active">
+  <option>true</option>
+  <option>false</option>
+</select>
+	</p>
+	<p>
+		<label>Promotional Code:</label><br />
+		<input type="text" name="day[promo_code]" id="promo_code" />
+	</p>
+	<p>
+		<input type="submit">
+	</p>
+</form>
+
+</div>

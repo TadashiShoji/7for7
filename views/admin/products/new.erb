@@ -1,0 +1,22 @@
+<div class="container">
+<h3>Create A New Product</h3>
+
+<form action="/admin/day/products/create/<%= @day.id %>" method="post" id="product" enctype="multipart/form-data">
+	<p>
+		<label>Product Name:</label><br />
+		<input type="text" name="product[productname]" id="productname" />	
+	</p>
+	<p>
+		<label>Description:</label><br />
+		<input type="text" name="product[description]" id="description" />
+	</p>
+	<p>
+		<label>Picture:</label><br />
+		<input type="text" name="product[picture]" id="picture" />
+	</p>
+	<p>
+	<input type="hidden" name="dayid" value="<%= @day.id %>">
+		<input type="submit">
+	</p>
+</form>
+</div>

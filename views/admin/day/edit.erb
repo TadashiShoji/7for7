@@ -1,0 +1,36 @@
+<div class="container">
+
+<h3>Edit</h3>
+
+<form action="/admin/day/update" method="post" id="day" enctype="multipart/form-data">
+	<p>
+		<label>Name:</label><br />
+		<input type="text" name="day[name]" id="blog" value="<%= @day.name %>"/>
+	</p>
+	<p>
+		<label>Activated:</label><br />
+		<select name="day[is_active]" id="is_active" id="blogger" value="<%= @day.is_active %>">
+	<% if @day.is_active == true %> 
+  <option selected="selected">true</option>
+  <option>false</option>
+  <% end %>
+
+  <% if @day.is_active == false %> 
+  <option>true</option>
+  <option selected="selected">false</option>
+  <% end %>
+
+</select>
+	</p>
+	</p>
+	<p>
+		<label>Promo Code:</label><br />
+		<input type="text" name="day[promo_code]" id="title" value="<%= @day.promo_code %>"/>
+	</p>
+	<input type="hidden" name="id" value="<%= @day.id %>">
+	<p>
+		<input type="submit">
+	</p>
+</form>
+
+</div>

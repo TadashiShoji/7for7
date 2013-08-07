@@ -1,0 +1,35 @@
+<div class="container">
+
+<img id="image" src="assets/0150_7for7_2_04.jpg" />
+
+<img id="image1" src="assets/0150_7for7_2_07.jpg" />
+
+<img id="image2" src="assets/0150_7for7_2_08.jpg" />
+
+<img id="image3" src="assets/0150_7for7_2_09.jpg" />
+
+<img id="image4" src="assets/0150_7for7_2_12.jpg" />
+
+<img id="image5" src="assets/0150_7for7_2_15.jpg" />
+
+
+
+
+	
+	<% @groups.products.each_with_index do |group,i| %>
+
+	<form action="/vote/<%= group.id %>" method="post" id="vote<%= i + 1 %>" enctype="multipart/form-data">
+			<p>
+		<input type="text" id="email" name="votes[email]" value="email goes here" hidden />
+		<input type="text" id="ip_address" name="votes[ip_address]" value="213" hidden />
+		<input type="text" id="subscribed" name="votes[subscribed]" value="true" hidden />
+		<input type="text" id="username" name="votes[username]" value="username" hidden />
+		<input type="submit" id="test<%= i + 1 %>"></a>
+		<%# <input id="" type="image" src="assets/voteNow_idle.jpg" /> %>
+	</p>
+</form>
+
+	<% end %>
+
+
+</div>

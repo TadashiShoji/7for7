@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Admin</title>
+<!-- Styles -->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-responsive.css" rel="stylesheet">
+<style>
+    body {
+    padding-top: 60px; /* When using the navbar-top-fixed */
+    }
+
+    .center {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
+    }
+
+    .centercontents {
+    text-align: center !important;
+    }
+
+    .alignrightcontents {
+    text-align: right !important;
+    }
+
+    table { table-layout: fixed; }
+ table th, table td { overflow: hidden; }
+
+    body
+    {
+  
+
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container"><a href="/admin">List Days</a> | <a href="/admin/day/new">Create New Day</a></div>
+ 
+<%= yield %>
+
+<!-- jQuery via Google + local fallback, see h5bp.com -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
+
+<!-- Bootstrap jQuery Plugins, compiled and minified -->
+<script src="/js/bootstrap.min.js"></script>
+<script>
+            $(document).ready(function() {
+                $('#windowTitleDialog').bind('show', function () {
+                    document.getElementById ("xlInput").value = document.title;
+                    });
+                });
+            function closeDialog () {
+                $('.modal').modal('hide'); 
+                };
+            function okClicked () {
+                closeDialog ();
+                };
+
+                
+ 
+</script>
+</body>
+</html>
