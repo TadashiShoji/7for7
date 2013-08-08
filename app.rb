@@ -184,8 +184,8 @@ get "/" do
     # for other data you can always run fql
     @friends_using_app = @graph.fql_query("SELECT uid, name, is_app_user, pic_square FROM user WHERE uid in (SELECT uid2 FROM friend WHERE uid1 = me()) AND is_app_user = 1")
   end
-
-  @wtf = Group.all(:votes => { :username => 'wtf'})
+  @groups = Group.first(:is_active => true)
+  #@groups = Group.all(:votes => { :username => 'wtf' })
 
   if @groups = Group.first(:is_active => true)
   erb :index
