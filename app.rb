@@ -185,6 +185,7 @@ get "/" do
     @friends_using_app = @graph.fql_query("SELECT uid, name, is_app_user, pic_square FROM user WHERE uid in (SELECT uid2 FROM friend WHERE uid1 = me()) AND is_app_user = 1")
   end
   @groups = Group.first(:is_active => true)
+  @groups.votes
   #@groups = Group.all(:votes => { :username => 'wtf' })
 
   if @groups = Group.first(:is_active => true)
