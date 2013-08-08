@@ -1,0 +1,49 @@
+<div class="container">
+
+<h2>Admin</h3>
+
+<table class="table" border="0" cellpartding="0" cellspacing="10" class="list">
+	<tr>
+	<th>Day</th>
+	<th>Active</th>
+	<th>Actions</th>
+	</tr>
+<% @groups.each_with_index do |group,i| %>
+	<tr<%= ' class="alt"' if i%2==0 %>>
+	  <td><a href="/admin/day/show/<%= group.id %>"><%= group.name %></a></td>
+
+	  <% if group.is_active == true %>
+	  <td><span class="label label-success">Active</span></td>
+
+	  <% end %>
+	  <% if group.is_active == false %>
+	  <td><span class="label">Disabled</span></td>
+
+	  <% end %>
+
+	  <td><a class="btn" href="/admin/day/edit/<%= group.id %>">Edit</a><a onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger" href="/admin/day/delete/<%= group.id %>">Delete</a></td>
+	</tr>	
+<% end %>
+</table>
+
+
+
+<h3>Emails</h3>
+
+<table class="table" border="0" cellpartding="0" cellspacing="10" class="list">
+	<tr>
+	<th>User Name</th>
+	<th>Email</th>
+	<th>Subscribed</th>
+	</tr>
+<% @emails.each_with_index do |group,i| %>
+	<tr<%= ' class="alt"' if i%2==0 %>>
+	  <td><a href="/admin/day/show/<%= group.id %>"><%= group.username %></a></td>
+	  <td><a href="/admin/day/show/<%= group.id %>"><%= group.email %></a></td>
+	  <td><a href="/admin/day/show/<%= group.id %>"><%= group.subscribed %></a></td>
+	</tr>	
+<% end %>
+</table>
+
+
+</div>

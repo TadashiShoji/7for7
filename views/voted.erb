@@ -1,0 +1,40 @@
+<div class="container">
+
+<a href="http://shop.tadashishoji.com/" target="_blank" id="shopnowimage"></a>
+
+<img id="votedimage" src="assets/0150_7for7_3_11.jpg" />
+
+<img id="votedimage1" src="assets/0150_7for7_3_14.jpg" />
+
+<% @groups.promotions.each_with_index do |group,i| %>
+
+<a href="<%= group.url %>" style="cursor:pointer"><img id="votedimageclick<%= i %>" src="assets/0150_7for7_3_<%= 15 + i %>.jpg" /></a>
+
+
+<% end %>
+
+
+<img id="votedimage5" src="assets/0150_7for7_3_18.jpg" />
+
+<img id="votedimage6" src="assets/0150_7for7_3_21.jpg" />
+
+<img id="votedimage7" src="assets/0150_7for7_3_24.jpg" />
+
+<a href="#" id="votedimage8"></a>
+
+<a href="#" id="votedimage9"></a>
+
+<a href="#" id="votedimage10"></a>
+
+<img id="votedimage11" src="assets/0150_7for7_3_28.jpg" />
+
+<img id="votedimage12" src="assets/0150_7for7_3_31.jpg" />
+
+<input type="text" id="promocode" value="<%= @groups.promo_code %>" />
+
+
+
+
+
+
+</div>
