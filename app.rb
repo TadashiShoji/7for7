@@ -105,6 +105,13 @@ unless ENV["FACEBOOK_APP_ID"] && ENV["FACEBOOK_SECRET"]
 end
 
 before do
+  headers 'Content-Type' => "text/html;charset=utf-8",
+'Last-Modified' => Time.now.httpdate,
+'P3P' => 'CP="CAO PSA OUR"',
+'X-UA-Compatible' => 'IE=edge'
+ 
+ 
+#Might not hurt either in the html header: <meta http-equiv="X-UA-Compatible" content="IE=7" />
   # HTTPS redirect
   if settings.environment == :production && request.scheme != 'https'
     redirect "https://#{request.env['HTTP_HOST']}"
@@ -166,8 +173,6 @@ post "/" do
 end
 
 get "/" do
-  response['P3P'] = "CP=\"CAO DSP COR CURa ADMa DEVa OUR IND PHY ONL UNI COM NAV INT DEM PRE\""
-  "SUCCESS"
   # Get base API Connection
   @graph  = Koala::Facebook::API.new(access_token)
 
