@@ -187,7 +187,7 @@ get "/" do
 
   if @groups = Group.first(:is_active => true)
     if @groups.all(:comments => { :username => session[:user_name] })
-      erb: novote
+      erb :novote
     end
   erb :index
   else
