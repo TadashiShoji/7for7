@@ -178,15 +178,15 @@ get "/" do
     @photos  = @graph.get_connections('me', 'photos')
     @likes   = @graph.get_connections('me', 'likes').first(4)
 
-    session[:user_name] = @user['username']
-    session[:email] = @user['email']
+    #session[:user_name] = @user['username']
+    #session[:email] = @user['email']
 
     # for other data you can always run fql
     @friends_using_app = @graph.fql_query("SELECT uid, name, is_app_user, pic_square FROM user WHERE uid in (SELECT uid2 FROM friend WHERE uid1 = me()) AND is_app_user = 1")
   end
   @groups = Group.first(:is_active => true)
   @products = @groups.products
-  @check = @products.votes.count(:username => session[:user_name]) == 0
+  @check = @products.votes.count(:username => @user['username']) == 0
   #@groups = Group.all(:votes => { :username => 'wtf' })
 
   if @groups = Group.first(:is_active => true)
