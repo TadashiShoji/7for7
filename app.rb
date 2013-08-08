@@ -186,6 +186,7 @@ get "/" do
   end
   @groups = Group.first(:is_active => true)
   @products = @groups.products
+  @check = @products.votes.count(:username => session[:user_name]) == 0
   #@groups = Group.all(:votes => { :username => 'wtf' })
 
   if @groups = Group.first(:is_active => true)
