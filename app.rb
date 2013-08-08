@@ -5,11 +5,23 @@ require "pg"
 require "data_mapper"
 
 enable :sessions
-set :raise_errors, false
-set :show_exceptions, false
+set :raise_errors, true
+set :show_exceptions, true
 
 # database connection from heroku
 DataMapper.setup(:default, ENV["DATABASE_URL"])
+
+class Email
+
+  include DataMapper::Resource
+
+  property :id,             Serial
+  property :username,       String
+  property :subscribed,     Boolean
+  property :email,          String, :required => false
+  property :created_at,    DateTime,  :required => false
+
+end
 
 class Group
   
