@@ -166,6 +166,8 @@ post "/" do
 end
 
 get "/" do
+  response['P3P'] = "CP=\"CAO DSP COR CURa ADMa DEVa OUR IND PHY ONL UNI COM NAV INT DEM PRE\""
+  "SUCCESS"
   # Get base API Connection
   @graph  = Koala::Facebook::API.new(access_token)
 
